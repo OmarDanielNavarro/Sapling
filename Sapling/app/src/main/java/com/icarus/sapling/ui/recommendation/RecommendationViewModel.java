@@ -1,16 +1,16 @@
-package com.icarus.sapling.ui.dashboard;
+package com.icarus.sapling.ui.recommendation;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class RecommendationViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public RecommendationViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is recommendation fragment");
     }
 
     public LiveData<String> getText() {

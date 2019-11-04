@@ -1,4 +1,4 @@
-package com.icarus.sapling.ui.notifications;
+package com.icarus.sapling.ui.recommendation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.icarus.sapling.R;
 
-public class NotificationsFragment extends Fragment {
+public class RecommendationFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private RecommendationViewModel notificationsViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        notificationsViewModel = ViewModelProviders.of(this).get(RecommendationViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+
+        notificationsViewModel.getText().observe(this,
+                new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
