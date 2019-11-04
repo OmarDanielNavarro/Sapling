@@ -1,16 +1,16 @@
-package com.icarus.sapling.ui.notifications;
+package com.icarus.sapling.ui.myGarden;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class MyGardenViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public MyGardenViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is myGarden fragment");
     }
 
     public LiveData<String> getText() {
