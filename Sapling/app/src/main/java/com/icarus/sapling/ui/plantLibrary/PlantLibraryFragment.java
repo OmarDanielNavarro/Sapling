@@ -1,4 +1,4 @@
-package com.icarus.sapling.ui.dashboard;
+package com.icarus.sapling.ui.plantLibrary;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.icarus.sapling.R;
 
-public class DashboardFragment extends Fragment {
+public class PlantLibraryFragment extends Fragment
+{
 
-    private DashboardViewModel dashboardViewModel;
+    private PlantLibraryViewModel dashboardViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        dashboardViewModel = ViewModelProviders.of(this).get(PlantLibraryViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(this, new Observer<String>() {
+        dashboardViewModel.getText().observe(this,
+                new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
