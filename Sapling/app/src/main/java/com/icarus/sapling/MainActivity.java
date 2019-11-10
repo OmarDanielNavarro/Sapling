@@ -1,6 +1,9 @@
 package com.icarus.sapling;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -12,6 +15,10 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView MyGarden;
+    String[] items;
+    String[] prices;
+    String[] descriptions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        Resources res = getResources();
+        MyGarden = (ListView) findViewById(R.id.MyGarden);
+        items = res.getStringArray(R.array.items);
+        prices = res.getStringArray(R.array.prices);
+        descriptions = res.getStringArray(R.array.descriptions);
+
+        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
+        MyGarden.setAdapter(itemAdapter);
+        //MyGarden.setAdapter(new ArrayAdapter<String>(this, R.layout.mygarden_detail, items));
+
     }
 
 }
