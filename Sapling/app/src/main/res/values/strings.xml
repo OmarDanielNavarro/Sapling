@@ -3,4 +3,25 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string-array name="items">
+        <item>  Ghost Plant </item>
+        <item>  Pencil Cactus </item>
+        <item>  Golden Barrel </item>
+        <item>  Zebra Cactus </item>
+    </string-array>
+
+    <string-array name="prices">
+        <item> 3.10$</item>
+        <item> 4.5$</item>
+        <item>2.4$</item>
+        <item>1.4$</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>This is Ghost Plant </item>
+        <item>This is Pencil Cactus</item>
+        <item>This is Golden Barrel</item>
+        <item>This is Zebra Cactus</item>
+    </string-array>
 </resources>
